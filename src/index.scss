@@ -1,0 +1,147 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+h1 {
+  @apply inline mx-2 font-bold text-3xl text-red-400;
+}
+
+h2 {
+  @apply text-2xl text-red-300 font-bold my-2;
+}
+
+h3 {
+  @apply text-lg text-red-200 font-bold;
+}
+
+p {
+  @apply text-sm text-justify text-gray-600;
+}
+
+li {
+  @apply text-red-400;
+}
+
+header {
+  @apply my-6;
+}
+
+a {
+  @apply text-red-300 hover:text-red-400 hover:underline px-2 py-1 mx-3;
+}
+
+svg {
+  fill: rgba(248, 113, 113);
+}
+
+.container {
+  @apply my-6 px-4;
+}
+
+.btn {
+  @apply inline mx-2 gradient opacity-25 text-white font-bold rounded focus:outline-none transform transition hover:scale-105 duration-300 ease-in-out shadow-lg;
+}
+
+.btn-sm {
+  @apply py-1 px-2;
+}
+
+.btn-lg {
+  @apply py-3 px-5;
+}
+
+.work-items {
+  @apply grid grid-cols-3 justify-items-stretch;
+}
+
+.work-element {
+  @apply text-center mx-4 my-2;
+}
+
+.card {
+  @apply flex flex-col w-2/3 mx-auto rounded-lg mt-4 shadow-lg z-10;
+}
+
+.dark-theme {
+  background-color: #1a1a1a;
+    h1 {
+      color: #d65a61;
+    }
+    h2 {
+      color: #d76d5d;
+    }
+    h3 {
+      color: #d88459;
+    }
+    p {
+      @apply text-gray-100;
+    }
+    a {
+      color: #d76d5d;
+        &:hover {
+          color: #d65a61;
+        }
+    }
+    li {
+      color: #d65a61;
+    }
+    svg {
+      fill: #d65a61;
+    }
+    label {
+      @apply text-gray-100
+    }
+    .btn {
+      @apply text-gray-100;
+      opacity: 1;
+    }
+    .top-dividor, .bottom-dividor {
+      opacity: 1;
+    }
+    .card {
+      background-color: lighten(#1a1a1a, 8);
+    }
+}
+
+.top-dividor {
+  @apply h-1 gradient opacity-25 my-0 py-0 rounded-t;
+}
+
+.bottom-dividor {
+  @apply h-1 gradient opacity-25 my-0 py-0 rounded-b;
+}
+
+.gradient {
+  background: linear-gradient(90deg, #d53369 0%, #daae51 100%);
+}
+
+.theme-icon {
+  @apply px-2;
+  font-size: 16px;
+}
+
+.list-element {
+  @apply border-b py-4;
+}
+
+.sublist-element {
+  @apply block font-normal mx-3 text-center;
+}
+
+input {
+  @apply appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm;
+}
