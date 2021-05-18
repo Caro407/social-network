@@ -6,11 +6,29 @@ import {
   Route,
   Switch,
 } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import store from './redux/store';
+import Navbar from './components/Navbar';
+import SignUp from './pages/SignUp';
+import Home from './pages/Home';
 
 const App = () => {
 
+
   return (
-    <h1>Hello</h1>
+    <Provider store={store}>
+      <Router>
+        <Navbar />
+        <Switch>
+          <Route path="/sign-up">
+            <SignUp />
+          </Route>
+          <Route path="/home">
+            <Home />
+          </Route>
+        </Switch>
+      </Router>
+    </Provider>
   )
 }
 
