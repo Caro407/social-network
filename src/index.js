@@ -10,6 +10,7 @@ import { Provider } from 'react-redux';
 import store from './redux/store';
 import Navbar from './components/Navbar';
 import SignUp from './pages/SignUp';
+import LogIn from './pages/LogIn';
 import Home from './pages/Home';
 
 const App = () => {
@@ -22,6 +23,9 @@ const App = () => {
         <Switch>
           <Route path="/sign-up">
             <SignUp />
+          </Route>
+          <Route path="/log-in">
+            <LogIn />
           </Route>
           <Route path="/home">
             <Home />
