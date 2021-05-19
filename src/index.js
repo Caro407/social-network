@@ -14,6 +14,8 @@ import LogIn from './pages/LogIn';
 import Home from './pages/Home';
 import Profile from './pages/Profile';
 import UpdateProfile from './pages/UpdateProfile';
+import Posts from './pages/Posts';
+import CreatePost from './pages/CreatePost';
 
 const App = () => {
 
@@ -33,6 +35,12 @@ const App = () => {
           </Route>
           <Route path="/update-profile">
             <UpdateProfile />
+          </Route>
+          <Route path="/posts">
+            <Posts />
+          </Route>
+          <Route path="/create-post">
+            <CreatePost />
           </Route>
           <Route path="/home">
             <Home />
