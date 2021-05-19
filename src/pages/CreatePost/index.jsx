@@ -36,7 +36,7 @@ const CreatePost = () => {
   };
 
   return (
-    <form onSubmit={createPost}>
+    <form onSubmit={createPost} className="container">
       <label>New post's text</label>
       <input name="text"/>
       <br/>

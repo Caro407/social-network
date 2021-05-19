@@ -4,7 +4,7 @@ import Form from './../../components/LogInForm';
 const LogIn = () => {
 
   return (
-    <div>
+    <div className="container">
       <h2>Please log in to continue !</h2>
       <Form />
     </div>

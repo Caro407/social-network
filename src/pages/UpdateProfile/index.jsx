@@ -36,7 +36,7 @@ const UpdateProfile = () => {
   };
 
   return (
-    <form onSubmit={updateUser}>
+    <form onSubmit={updateUser} className="container">
       <label>Email</label>
       <input name="email" value={userInfos.email}/>
       <br/>

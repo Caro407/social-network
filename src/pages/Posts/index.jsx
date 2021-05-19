@@ -24,11 +24,13 @@ const Posts = () => {
   React.useEffect(() => {fetchPosts()}, []);
 
   return (
-    <div>
+    <div className="container">
       <h2>Posts</h2>
-      {posts.map((post, index) =>
-        <Card data={post} key={index}/>
-      )}
+      <div className="grid grid-cols-3 gap-4">
+        {posts.map((post, index) =>
+          <Card data={post} key={index}/>
+        )}
+      </div>
       <Link to="/create-post">Create new post</Link>
     </div>
   )

@@ -7,7 +7,7 @@ const Profile = () => {
   const userInfos = useSelector(state => state.user)
 
   return (
-    <div>
+    <div className="container">
       <h2>User Profile</h2>
       <h3>Welcome {userInfos.username} !</h3>
       <p>Email address used : {userInfos.email}</p>
