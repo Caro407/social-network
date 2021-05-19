@@ -12,6 +12,7 @@ const authReducer = (state = initialState, action) => {
         is_connected: true
       };
     default:
+      console.log("Attention ça pue" + action.type);
       return state;
   }
 };

@@ -1,8 +1,13 @@
 import React from 'react';
 import Cookies from 'js-cookie';
+import { authUser } from './../../redux/index';
+import { useSelector, useDispatch } from 'react-redux';
+import { Redirect } from "react-router-dom";
 
 const Form = () => {
   const [formStatus, setStatus] = React.useState('');
+  const is_connected = useSelector(state => state.is_connected);
+  const dispatch = useDispatch();
 
   const authentify_user = (event) => {
     let values = Object.fromEntries(new FormData(document.querySelector('form')))
@@ -26,7 +31,8 @@ const Form = () => {
         console.log(response);
         Cookies.set('token', response.jwt);
         setStatus("You are logged in.");
-        window.location = "/home"
+        dispatch(authUser());
+        console.log(is_connected);
       })
       .catch(error => {
         console.log(error);
@@ -37,6 +43,7 @@ const Form = () => {
   return (
     <div>
       <div>
+        <p>{is_connected}</p>
         <p>{formStatus}</p>
       </div>
       <form onSubmit={authentify_user}>
@@ -54,6 +61,7 @@ const Form = () => {
         <br/>
         <input type="submit" value="Submit" />
       </form>
+      {is_connected && window.location.href.includes('sign') ? <Redirect to={{pathname: '/home'}} /> : <p></p> }
     </div>
   )
 }
