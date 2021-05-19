@@ -15,7 +15,6 @@ import Home from './pages/Home';
 
 const App = () => {
 
-
   return (
     <Provider store={store}>
       <Router>
