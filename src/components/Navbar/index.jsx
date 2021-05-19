@@ -7,13 +7,25 @@ import { useSelector, useDispatch } from 'react-redux';
 
 const Navbar = () => {
   const is_connected = useSelector(state => state.is_connected);
+  const userInfos = useSelector(state => state.user);
   const dispatch = useDispatch();
 
   React.useEffect(() => {
     const checkAuthStatus = () => {
       let authCookie = Cookies.get('token');
       if(authCookie) {
-        dispatch(authUser());
+        fetch("http://localhost:1337/users/me", {
+          method: 'get',
+          headers: {
+            'Authorization': `Bearer ${Cookies.get('token')}`,
+            'Content-Type': 'application/json'
+          }
+        })
+          .then(response => response.json())
+          .then(response => {
+            console.log(response);
+            dispatch(authUser(response));
+          })
       };
     };
     checkAuthStatus();
