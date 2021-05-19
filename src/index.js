@@ -12,6 +12,8 @@ import Navbar from './components/Navbar';
 import SignUp from './pages/SignUp';
 import LogIn from './pages/LogIn';
 import Home from './pages/Home';
+import Profile from './pages/Profile';
+import UpdateProfile from './pages/UpdateProfile';
 
 const App = () => {
 
@@ -25,6 +27,12 @@ const App = () => {
           </Route>
           <Route path="/log-in">
             <LogIn />
+          </Route>
+          <Route path="/profile">
+            <Profile />
+          </Route>
+          <Route path="/update-profile">
+            <UpdateProfile />
           </Route>
           <Route path="/home">
             <Home />

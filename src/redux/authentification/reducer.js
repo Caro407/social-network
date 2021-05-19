@@ -1,7 +1,8 @@
 import { AUTH_USER, DISCONNECT_USER } from './types.js';
 
 const initialState = {
-  is_connected: false
+  is_connected: false,
+  user: {}
 };
 
 const authReducer = (state = initialState, action) => {
@@ -9,7 +10,8 @@ const authReducer = (state = initialState, action) => {
     case AUTH_USER:
       return {
         ...state,
-        is_connected: true
+        is_connected: true,
+        user: action.user
       }
     case DISCONNECT_USER:
       return {

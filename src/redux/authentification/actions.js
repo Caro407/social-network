@@ -1,8 +1,9 @@
 import { AUTH_USER, DISCONNECT_USER } from './types.js';
 
-export const authUser = () => {
+export const authUser = (user) => {
   return {
-    type: AUTH_USER
+    type: AUTH_USER,
+    user
   }
 };
 

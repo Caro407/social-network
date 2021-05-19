@@ -7,19 +7,14 @@ import { useSelector, useDispatch } from 'react-redux';
 
 const Navbar = () => {
   const is_connected = useSelector(state => state.is_connected);
-
-  const [authStatus, setStatus] = React.useState('');
   const dispatch = useDispatch();
 
   React.useEffect(() => {
     const checkAuthStatus = () => {
       let authCookie = Cookies.get('token');
-      if(!authCookie) {
-        setStatus('user_not_authentified')
-      } else {
-        setStatus('user_authentified');
+      if(authCookie) {
         dispatch(authUser());
-      }
+      };
     };
     checkAuthStatus();
   }, []);
