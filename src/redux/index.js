@@ -1,1 +1,1 @@
-export { authUser } from './authentification/actions'
+export { authUser, disconnectUser } from './authentification/actions'

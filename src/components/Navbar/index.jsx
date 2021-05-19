@@ -1,20 +1,15 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import Cookies from 'js-cookie';
+import VisitorNavbar from './../VisitorNavbar';
+import LoggedInNavbar from './../LoggedInNavbar';
+import { useSelector } from 'react-redux';
 
 const Navbar = () => {
-  const disconnectUser = (event) => {
-    event.preventDefault();
-    Cookies.remove('token');
-  };
+  const is_connected = useSelector(state => state.is_connected);
 
   return (
     <nav className="h-10 w-full border-b border-1 my-2">
       <div>
-        <Link to="/home" className="mx-2">Accueil</Link>
-        <Link to="/sign-up" className="mx-2">Sign Up</Link>
-        <Link to="/log-in" className="mx-2">Login</Link>
-        <button onClick={disconnectUser} className="btn">Disconnect</button>
+        {is_connected ? <LoggedInNavbar/> : <VisitorNavbar/>}
       </div>
     </nav>
   )

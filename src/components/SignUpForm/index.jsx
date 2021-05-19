@@ -43,7 +43,6 @@ const Form = () => {
   return (
     <div>
       <div>
-        <p>{is_connected}</p>
         <p>{formStatus}</p>
       </div>
       <form onSubmit={authentify_user}>
