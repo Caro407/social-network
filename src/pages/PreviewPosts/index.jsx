@@ -12,7 +12,7 @@ const PreviewPosts = () => {
       }
     })
       .then(response => response.json())
-      .then(response => {    
+      .then(response => {
         setPosts(response)
       })
   };

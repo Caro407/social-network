@@ -17,7 +17,7 @@ const UsersProfile = () => {
       }
     })
       .then(response => response.json())
-      .then(response => {        
+      .then(response => {
         setUserInfos(response);
       });
   };
@@ -31,7 +31,7 @@ const UsersProfile = () => {
       }
     })
       .then(response => response.json())
-      .then(response => {        
+      .then(response => {
         if(response.length > 0) {
           setUserPosts(response);
         };
@@ -42,7 +42,7 @@ const UsersProfile = () => {
   React.useEffect(() => {fetchUserInfos()}, []);
 
   return (
-    <div>
+    <div className="container">
       <h2>{userInfos.username}</h2>
       <p>{userInfos.description}</p>
         <div className="grid grid-cols-3 gap-4">

@@ -1,9 +1,22 @@
 import React from 'react';
 import Cookies from 'js-cookie';
+import { useSelector } from 'react-redux';
 
 const LikeButton = (props) => {
+  const user = useSelector(state => state.user)
   const [likes, setLikes] = React.useState(props.likes);
   const [likeStatus, setLikeStatus] = React.useState('not-liked');
+
+
+  React.useEffect(() => {
+    let savedLike = localStorage.getItem(`post-${props.id}`);
+    const isAlreadyLiked = () => {
+      if(savedLike) {
+        setLikeStatus('liked')
+      }
+    };
+    isAlreadyLiked();
+  }, [])
 
   const updateLikes = (newLikesCount) => {
     const data = {
@@ -25,9 +38,13 @@ const LikeButton = (props) => {
 
     updateLikes(newLikesCount)
       .then(response => response.json())
-      .then(response => {    
+      .then(response => {
         setLikes(newLikesCount);
         setLikeStatus('liked')
+        localStorage.setItem(`post-${props.id}`, `{
+          status: 'liked',
+          user: ${user.id}
+        }`)
       })
   };
 
@@ -39,6 +56,7 @@ const LikeButton = (props) => {
       .then(response => {
         setLikes(newLikesCount);
         setLikeStatus('not-liked')
+        localStorage.removeItem(`post-${props.id}`);
       })
   };
 

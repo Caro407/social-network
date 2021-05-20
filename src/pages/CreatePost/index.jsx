@@ -1,11 +1,9 @@
 import React from 'react';
 import Cookies from 'js-cookie';
 import { useSelector } from 'react-redux';
-import { Redirect } from "react-router-dom";
 
 const CreatePost = (props) => {
   const userInfos = useSelector(state => state.user);
-  const [creationStatus, setStatus] = React.useState('')
 
   const createPost = (event) => {
     event.preventDefault();
@@ -26,7 +24,6 @@ const CreatePost = (props) => {
         return response.json()
       })
       .then(response => {
-        setStatus('creation_done');
         props.updatePosts();
       })
       .catch(error => {

@@ -1,7 +1,6 @@
 import React from 'react';
 import Posts from './../Posts';
 import PreviewPosts from './../PreviewPosts';
-import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 const Home = () => {
