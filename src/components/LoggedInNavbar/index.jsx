@@ -18,7 +18,7 @@ const LoggedInNavbar = () => {
       <div>
         <Link to="/home" className="mx-2">Accueil</Link>
         <Link to="/profile" className="mx-2">Profile</Link>
-        <button onClick={deleteUserSession} className="btn">Disconnect</button>
+        <button onClick={deleteUserSession} className="btn btn-sm">Sign Out</button>
       </div>
     </nav>
   )
