@@ -20,7 +20,7 @@ const Card = (props) => {
   React.useEffect(() => {isUserAuthor()}, []);
 
   return (
-    <div className='post-container'>
+    <div className='post-container my-1'>
       <h3 className="inline">{props.data.text}</h3>
       {isAuthor ? <i className="fas fa-trash-alt inline ml-2" onClick={deletePostById}></i> : <p></p>}
       <Link to={`/users/${props.data.user.id}`} className="block">- {props.data.user.username}</Link>

@@ -3,7 +3,7 @@ import Cookies from 'js-cookie';
 import { useSelector } from 'react-redux';
 import { Redirect } from "react-router-dom";
 
-const CreatePost = () => {
+const CreatePost = (props) => {
   const userInfos = useSelector(state => state.user);
   const [creationStatus, setStatus] = React.useState('')
 
@@ -29,6 +29,7 @@ const CreatePost = () => {
       .then(response => {
         console.log(response);
         setStatus('creation_done');
+        props.updatePosts();
       })
       .catch(error => {
         console.log(error);
@@ -37,13 +38,10 @@ const CreatePost = () => {
 
   return (
     <form onSubmit={createPost} className="container">
-      <label>New post's text</label>
-      <input name="text"/>
-      <br/>
-      <br/>
+      <label className="block">New post's text</label>
+      <input name="text" className="input"/>
       <input type="hidden" name="user" value={userInfos.id} />
-      <input type="submit" value="Submit" />
-      {(creationStatus === 'creation_done') ? <Redirect to={{pathname: '/posts'}} /> : <p></p> }
+      <input type="submit" value="Share" className="submit" />
     </form>
   )
 };

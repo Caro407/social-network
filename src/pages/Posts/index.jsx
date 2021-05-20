@@ -1,7 +1,7 @@
 import React from 'react';
 import Cookies from 'js-cookie';
 import Card from './../../components/Card';
-import { Link } from 'react-router-dom';
+import CreatePost from './../CreatePost';
 
 const Posts = () => {
   const [posts, setPosts] = React.useState([]);
@@ -40,13 +40,13 @@ const Posts = () => {
 
   return (
     <div className="container">
-      <h2>Posts</h2>
-      <div className="grid grid-cols-3 gap-4">
+      <h2>Feed</h2>
+      <CreatePost updatePosts={fetchPosts}/>
+      <div className="">
         {posts.map((post, index) =>
           <Card data={post} key={index} deletePost={deletePost}/>
         )}
       </div>
-      <Link to="/create-post">Create new post</Link>
     </div>
   )
 };

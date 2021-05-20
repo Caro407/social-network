@@ -16,7 +16,6 @@ import Home from './pages/Home';
 import Profile from './pages/Profile';
 import UpdateProfile from './pages/UpdateProfile';
 import Posts from './pages/Posts';
-import CreatePost from './pages/CreatePost';
 import UsersProfile from './pages/UsersProfile';
 
 const App = () => {
@@ -31,7 +30,6 @@ const App = () => {
           <PrivateRoute path="/profile" component={Profile} />
           <PrivateRoute path="/update-profile" component={UpdateProfile} />
           <PrivateRoute path="/posts" component={Posts} />
-          <PrivateRoute path="/create-post" component={CreatePost} />
           <PrivateRoute path="/users/:userId" component={UsersProfile} />
           <Route path="/home" component={Home} />
         </Switch>
