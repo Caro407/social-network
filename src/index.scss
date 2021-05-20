@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+$fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import '~@fortawesome/fontawesome-free/scss/solid';
+@import '~@fortawesome/fontawesome-free/scss/regular';
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -76,47 +81,6 @@ svg {
   @apply flex flex-col w-2/3 mx-auto rounded-lg mt-4 shadow-lg z-10;
 }
 
-.dark-theme {
-  background-color: #1a1a1a;
-    h1 {
-      color: #d65a61;
-    }
-    h2 {
-      color: #d76d5d;
-    }
-    h3 {
-      color: #d88459;
-    }
-    p {
-      @apply text-gray-100;
-    }
-    a {
-      color: #d76d5d;
-        &:hover {
-          color: #d65a61;
-        }
-    }
-    li {
-      color: #d65a61;
-    }
-    svg {
-      fill: #d65a61;
-    }
-    label {
-      @apply text-gray-100
-    }
-    .btn {
-      @apply text-gray-100;
-      opacity: 1;
-    }
-    .top-dividor, .bottom-dividor {
-      opacity: 1;
-    }
-    .card {
-      background-color: lighten(#1a1a1a, 8);
-    }
-}
-
 .top-dividor {
   @apply h-1 gradient opacity-25 my-0 py-0 rounded-t;
 }
@@ -148,4 +112,12 @@ input {
 
 .post-container {
   @apply border rounded-md border-gray-300 p-2;
+}
+
+.heart {
+  @apply text-red-700;
+}
+
+i {
+  @apply cursor-pointer text-gray-600;
 }

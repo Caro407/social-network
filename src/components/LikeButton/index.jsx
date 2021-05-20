@@ -44,21 +44,13 @@ const LikeButton = (props) => {
       })
   };
 
-  if(likeStatus === 'liked'){
+
     return (
       <div>
-        <button onClick={deleteLike}>Liked</button>
-        {(likes > 0) ? <p>Il y a actuellement {likes} likes sur ce post.</p> : <p>Il n'y a pas encore de likes sur ce post.</p>}
-      </div>
-    )
-  } else {
-    return (
-      <div>
-        <button onClick={addLike}>Like !</button>
-        {(likes > 0) ? <p>Il y a actuellement {likes} likes sur ce post.</p> : <p>Il n'y a pas encore de likes sur ce post.</p>}
+        {(likeStatus === 'liked') ? <button onClick={deleteLike} className="heart inline">❤</button> : <button onClick={addLike} className="heart inline">♡</button>}
+        {(likes > 0) ? <p className="inline ml-2">Il y a actuellement {likes} likes sur ce post.</p> : <p className="inline ml-2">Il n'y a pas encore de likes sur ce post.</p>}
       </div>
     )
   }
-}
 
 export default LikeButton;

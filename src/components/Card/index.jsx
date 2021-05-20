@@ -21,10 +21,10 @@ const Card = (props) => {
 
   return (
     <div className='post-container'>
-      <h3>{props.data.text}</h3>
-      {isAuthor ? <button onClick={deletePostById}>Delete post</button> : <p></p>}
+      <h3 className="inline">{props.data.text}</h3>
+      {isAuthor ? <i className="fas fa-trash-alt inline ml-2" onClick={deletePostById}></i> : <p></p>}
+      <Link to={`/users/${props.data.user.id}`} className="block">- {props.data.user.username}</Link>
       <LikeButton likes={props.data.like} id={props.data.id} />
-      <Link to={`/users/${props.data.user.id}`}>- {props.data.user.username}</Link>
     </div>
   )
 }
