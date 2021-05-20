@@ -7,7 +7,6 @@ import { useSelector, useDispatch } from 'react-redux';
 
 const Navbar = () => {
   const is_connected = useSelector(state => state.is_connected);
-  const userInfos = useSelector(state => state.user);
   const dispatch = useDispatch();
 
   React.useEffect(() => {

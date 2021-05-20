@@ -1,10 +1,11 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import Cookies from 'js-cookie';
+import Card from './../../components/Card';
 
 const UsersProfile = () => {
   const [userInfos, setUserInfos] = React.useState('');
-  const [userPosts, setUserPosts] = React.useState('');
+  const [userPosts, setUserPosts] = React.useState([]);
   let { userId } = useParams();
 
   const fetchUserInfos = () => {
@@ -33,7 +34,9 @@ const UsersProfile = () => {
       .then(response => response.json())
       .then(response => {
         console.log(response);
-        setUserPosts(response);
+        if(response.length > 0) {
+          setUserPosts(response);
+        };
       });
   };
 
@@ -44,14 +47,12 @@ const UsersProfile = () => {
     <div>
       <h2>{userInfos.username}</h2>
       <p>{userInfos.description}</p>
-      <div>
-        {userPosts.map(post =>
-          <div className="post-container">
-            <h3>{post.text}</h3>
-            <p>Likes : {post.like}</p>
-          </div>
-        )}
-      </div>
+        <div className="grid grid-cols-3 gap-4">
+          {userPosts.map((post, index) =>
+            <Card data={post} key={index}/>
+          )}
+        </div>
+
     </div>
   )
 };
