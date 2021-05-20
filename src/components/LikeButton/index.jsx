@@ -41,10 +41,7 @@ const LikeButton = (props) => {
       .then(response => {
         setLikes(newLikesCount);
         setLikeStatus('liked')
-        localStorage.setItem(`post-${props.id}`, `{
-          status: 'liked',
-          user: ${user.id}
-        }`)
+        localStorage.setItem(`post-${props.id}`, 'liked')
       })
   };
 
