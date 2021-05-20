@@ -20,12 +20,12 @@ const CreatePost = (props) => {
       body: JSON.stringify(values)
     })
       .then(response => {
-        if(!response.ok) {          
+        if(!response.ok) {
           throw Error(response.statusText)
         }
         return response.json()
       })
-      .then(response => {        
+      .then(response => {
         setStatus('creation_done');
         props.updatePosts();
       })
