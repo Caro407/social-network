@@ -16,6 +16,7 @@ import Profile from './pages/Profile';
 import UpdateProfile from './pages/UpdateProfile';
 import Posts from './pages/Posts';
 import CreatePost from './pages/CreatePost';
+import UsersProfile from './pages/UsersProfile';
 
 const App = () => {
 
@@ -41,6 +42,9 @@ const App = () => {
           </Route>
           <Route path="/create-post">
             <CreatePost />
+          </Route>
+          <Route path="/users/:userId">
+            <UsersProfile />
           </Route>
           <Route path="/home">
             <Home />
