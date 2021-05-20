@@ -46,10 +46,8 @@ const Form = () => {
         <label>email</label>
         <input name="identifier"/>
         <br/>
-        <br/>
         <label>Password</label>
         <input name="password"/>
-        <br/>
         <br/>
         <input type="submit" value="Submit" />
       </form>
