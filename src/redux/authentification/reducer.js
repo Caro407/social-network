@@ -6,7 +6,10 @@ const initialState = {
 };
 
 const authReducer = (state = initialState, action) => {
+  console.log("Attention ça pue laction " + JSON.stringify(action));
+  console.log("Attention ça pue laction2  " + JSON.stringify(action.user));
   switch(action.type) {
+
     case AUTH_USER:
       return {
         ...state,

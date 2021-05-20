@@ -14,7 +14,8 @@ As a visitor :
 As a logged in user :
 - see and update your profile
 - view all the users' posts
-- create your own posts
-- disconnect
+- create and delete your own posts
+- like and unlike posts
+- sign-out
 
 ### run `npm start` to start !

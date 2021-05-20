@@ -32,7 +32,7 @@ const Form = () => {
         console.log(response);
         Cookies.set('token', response.jwt);
         setStatus("You are logged in.");
-        dispatch(authUser(response));
+        dispatch(authUser(response.user));
         console.log(is_connected);
       })
       .catch(error => {
