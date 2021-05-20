@@ -20,14 +20,12 @@ const UpdateProfile = () => {
       body: JSON.stringify(values)
     })
       .then(response => {
-        if(!response.ok) {
-          console.log(response);
+        if(!response.ok) {          
           throw Error(response.statusText)
         }
         return response.json()
       })
-      .then(response => {
-        console.log(response);
+      .then(response => {        
         setStatus('update_done');
       })
       .catch(error => {

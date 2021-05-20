@@ -28,14 +28,11 @@ const Form = () => {
         return response.json()
       })
       .then(response => {
-        console.log(response);
         Cookies.set('token', response.jwt);
         setStatus("You are logged in.");
         dispatch(authUser());
-        console.log(is_connected);
       })
       .catch(error => {
-        console.log(error);
         setStatus(error.message);
       })
   }

@@ -10,6 +10,7 @@ In order for this to work properly, you'll need to have the API servor running.
 
 As a visitor :
 - sign up / log in
+- view blinded posts
 
 As a logged in user :
 - see and update your profile

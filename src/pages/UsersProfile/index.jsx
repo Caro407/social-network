@@ -17,8 +17,7 @@ const UsersProfile = () => {
       }
     })
       .then(response => response.json())
-      .then(response => {
-        console.log(response);
+      .then(response => {        
         setUserInfos(response);
       });
   };
@@ -32,8 +31,7 @@ const UsersProfile = () => {
       }
     })
       .then(response => response.json())
-      .then(response => {
-        console.log(response);
+      .then(response => {        
         if(response.length > 0) {
           setUserPosts(response);
         };

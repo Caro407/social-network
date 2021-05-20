@@ -16,7 +16,6 @@ const Posts = () => {
     })
       .then(response => response.json())
       .then(response => {
-        console.log(response);
         setPosts(response)
       })
   };
@@ -31,7 +30,6 @@ const Posts = () => {
     })
       .then(response => response.json())
       .then(response => {
-        console.log(response);
         fetchPosts();
       })
   };

@@ -23,20 +23,16 @@ const Form = () => {
     })
       .then(response => {
         if(!response.ok) {
-          console.log(response);
           throw Error(response.statusText)
         }
         return response.json()
       })
       .then(response => {
-        console.log(response);
         Cookies.set('token', response.jwt);
         setStatus("You are logged in.");
         dispatch(authUser(response.user));
-        console.log(is_connected);
       })
       .catch(error => {
-        console.log(error);
         setStatus(error.message);
       })
   }

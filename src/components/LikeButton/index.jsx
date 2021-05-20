@@ -25,8 +25,7 @@ const LikeButton = (props) => {
 
     updateLikes(newLikesCount)
       .then(response => response.json())
-      .then(response => {
-        console.log(response);
+      .then(response => {    
         setLikes(newLikesCount);
         setLikeStatus('liked')
       })
@@ -38,7 +37,6 @@ const LikeButton = (props) => {
     updateLikes(newLikesCount)
       .then(response => response.json())
       .then(response => {
-        console.log(response);
         setLikes(newLikesCount);
         setLikeStatus('not-liked')
       })
