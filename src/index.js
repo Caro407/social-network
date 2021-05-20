@@ -9,6 +9,7 @@ import {
 import { Provider } from 'react-redux';
 import store from './redux/store';
 import Navbar from './components/Navbar';
+import PrivateRoute from './components/PrivateRoute';
 import SignUp from './pages/SignUp';
 import LogIn from './pages/LogIn';
 import Home from './pages/Home';
@@ -25,30 +26,14 @@ const App = () => {
       <Router>
         <Navbar />
         <Switch>
-          <Route path="/sign-up">
-            <SignUp />
-          </Route>
-          <Route path="/log-in">
-            <LogIn />
-          </Route>
-          <Route path="/profile">
-            <Profile />
-          </Route>
-          <Route path="/update-profile">
-            <UpdateProfile />
-          </Route>
-          <Route path="/posts">
-            <Posts />
-          </Route>
-          <Route path="/create-post">
-            <CreatePost />
-          </Route>
-          <Route path="/users/:userId">
-            <UsersProfile />
-          </Route>
-          <Route path="/home">
-            <Home />
-          </Route>
+          <Route path="/sign-up" component={SignUp} />
+          <Route path="/log-in" component={LogIn} />
+          <PrivateRoute path="/profile" component={Profile} />
+          <PrivateRoute path="/update-profile" component={UpdateProfile} />
+          <PrivateRoute path="/posts" component={Posts} />
+          <PrivateRoute path="/create-post" component={CreatePost} />
+          <PrivateRoute path="/users/:userId" component={UsersProfile} />
+          <Route path="/home" component={Home} />
         </Switch>
       </Router>
     </Provider>

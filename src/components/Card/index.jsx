@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import LikeButton from './../LikeButton';
 import { useSelector } from 'react-redux';
-import Cookies from 'js-cookie';
 
 const Card = (props) => {
   const [isAuthor, setAuthor] = React.useState(false)
