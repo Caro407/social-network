@@ -30,7 +30,7 @@ const Form = () => {
       .then(response => {
         Cookies.set('token', response.jwt);
         setStatus("You are logged in.");
-        dispatch(authUser());
+        dispatch(authUser(response));
       })
       .catch(error => {
         setStatus(error.message);
